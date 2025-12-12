@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-export default function RegisterPage() {
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
+export default function LoginPage() {
+  const [form, setForm] = useState({ email: "", password: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -14,7 +14,7 @@ export default function RegisterPage() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form Submitted", form);
+    console.log("Login Attempt", form);
   };
 
   return (
@@ -22,21 +22,9 @@ export default function RegisterPage() {
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
         <Card className="w-full max-w-md shadow-xl rounded-2xl">
           <CardContent className="p-8">
-            <h1 className="text-3xl font-bold mb-6 text-center">Register</h1>
+            <h1 className="text-3xl font-bold mb-6 text-center">Login</h1>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium mb-1">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  className="w-full p-3 border rounded-xl"
-                  placeholder="Enter your name"
-                  required
-                />
-              </div>
 
               <div>
                 <label className="block text-sm font-medium mb-1">Email</label>
@@ -65,14 +53,14 @@ export default function RegisterPage() {
               </div>
 
               <Button type="submit" className="w-full py-3 rounded-xl text-lg font-semibold">
-                Create Account
+                Login
               </Button>
             </form>
 
             <p className="mt-4 text-center text-sm">
-              Already have an account?{" "}
-              <a href="/login" className="text-blue-600 font-medium">
-                Login
+              Don’t have an account?{" "}
+              <a href="/" className="text-blue-600 font-medium">
+                Register
               </a>
             </p>
           </CardContent>
