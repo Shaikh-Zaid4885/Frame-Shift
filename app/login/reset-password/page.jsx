@@ -1,13 +1,13 @@
 // for redirect to reset page from mail
-//https://yourdomain.com/login/reset-password?token=XYZ123
+// https://yourdomain.com/login/reset-password?token=XYZ123
 
 "use client";
 
 import React, { useState } from "react";
 
-const ResetPassword: React.FC = () => {
-  const [password, setPassword] = useState<string>("");
-  const [confirm, setConfirm] = useState<string>("");
+const ResetPassword = () => {
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
@@ -21,9 +21,7 @@ const ResetPassword: React.FC = () => {
             type="password"
             placeholder="New password"
             value={password}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setPassword(e.target.value)
-            }
+            onChange={(e) => setPassword(e.target.value)}
             className="w-full border px-3 py-2 rounded-md"
           />
 
@@ -31,9 +29,7 @@ const ResetPassword: React.FC = () => {
             type="password"
             placeholder="Confirm password"
             value={confirm}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setConfirm(e.target.value)
-            }
+            onChange={(e) => setConfirm(e.target.value)}
             className="w-full border px-3 py-2 rounded-md"
           />
 

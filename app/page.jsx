@@ -1,7 +1,7 @@
 "use client";
 
+import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import { useState } from "react";
 
 // Color palette inspired by coolors.co
 // Primary: #2563EB (blue)
@@ -16,6 +16,7 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 px-4">
       <div className="w-full max-w-md rounded-2xl bg-white shadow-xl shadow-blue-100 p-8 border border-blue-100">
+        
         {/* Logo */}
         <div className="flex items-center justify-center gap-2 mb-6">
           <span className="text-xl font-bold text-blue-600">&lt;/&gt;</span>
@@ -32,9 +33,12 @@ export default function RegisterPage() {
 
         {/* Form */}
         <form className="space-y-4">
+          
           {/* Full Name */}
           <div>
-            <label className="text-sm font-medium text-slate-700">Full Name</label>
+            <label className="text-sm font-medium text-slate-700">
+              Full Name
+            </label>
             <input
               type="text"
               placeholder="Enter your full name"
@@ -44,7 +48,9 @@ export default function RegisterPage() {
 
           {/* Email */}
           <div>
-            <label className="text-sm font-medium text-slate-700">Email</label>
+            <label className="text-sm font-medium text-slate-700">
+              Email
+            </label>
             <input
               type="email"
               placeholder="Enter your email"
@@ -54,7 +60,9 @@ export default function RegisterPage() {
 
           {/* Contact Number */}
           <div>
-            <label className="text-sm font-medium text-slate-700">Contact Number</label>
+            <label className="text-sm font-medium text-slate-700">
+              Contact Number
+            </label>
             <input
               type="tel"
               placeholder="Enter your phone number"
@@ -64,7 +72,9 @@ export default function RegisterPage() {
 
           {/* Password */}
           <div>
-            <label className="text-sm font-medium text-slate-700">Password</label>
+            <label className="text-sm font-medium text-slate-700">
+              Password
+            </label>
             <div className="relative mt-1">
               <input
                 type={showPassword ? "text" : "password"}
@@ -83,7 +93,9 @@ export default function RegisterPage() {
 
           {/* Confirm Password */}
           <div>
-            <label className="text-sm font-medium text-slate-700">Confirm Password</label>
+            <label className="text-sm font-medium text-slate-700">
+              Confirm Password
+            </label>
             <div className="relative mt-1">
               <input
                 type={showConfirmPassword ? "text" : "password"}
@@ -92,10 +104,16 @@ export default function RegisterPage() {
               />
               <button
                 type="button"
-                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                onClick={() =>
+                  setShowConfirmPassword(!showConfirmPassword)
+                }
                 className="absolute right-3 top-2.5 text-slate-400 hover:text-indigo-600"
               >
-                {showConfirmPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                {showConfirmPassword ? (
+                  <EyeOff size={16} />
+                ) : (
+                  <Eye size={16} />
+                )}
               </button>
             </div>
           </div>

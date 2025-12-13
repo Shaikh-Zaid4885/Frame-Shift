@@ -1,7 +1,7 @@
 "use client";
 
+import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import { useState } from "react";
 
 // Coolors-inspired palette
 // Primary: #2563EB (Blue)
@@ -16,6 +16,7 @@ export default function SignInPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 px-4">
       <div className="w-full max-w-md rounded-2xl bg-white shadow-xl shadow-blue-100 border border-blue-100 p-8">
+        
         {/* Logo */}
         <div className="flex items-center justify-center gap-2 mb-8">
           <span className="text-xl font-bold text-blue-600">&lt;/&gt;</span>
@@ -72,7 +73,10 @@ export default function SignInPage() {
 
         {/* Links */}
         <div className="text-center mt-6 space-y-3">
-          <a href="/login/forgot-password" className="text-sm text-blue-600 hover:underline">
+          <a
+            href="/login/forgot-password"
+            className="text-sm text-blue-600 hover:underline"
+          >
             Forgot Password?
           </a>
 
