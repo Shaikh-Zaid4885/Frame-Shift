@@ -46,7 +46,6 @@ export default function UserDashboard() {
         md:translate-x-0 md:static`}
       >
         <div
-          onClick={() => go("/")}
           className="px-6 py-5 text-lg font-semibold cursor-pointer border-b"
         >
           &lt;/&gt; FrameShift
@@ -55,7 +54,6 @@ export default function UserDashboard() {
         <nav className="p-4 space-y-1 text-sm">
           <SideItem icon={<Home size={18} />} label="Dashboard" onClick={() => go("/user-dashboard")} />
           <SideItem icon={<Layers size={18} />} label="Migrations" onClick={() => go("/migrations")} />
-          <SideItem icon={<FileText size={18} />} label="Reports" onClick={() => go("/reports")} />
           <SideItem icon={<Settings size={18} />} label="Settings" onClick={() => go("/settings")} />
         </nav>
 
@@ -137,13 +135,13 @@ export default function UserDashboard() {
                   icon={<Upload />}
                   title="Upload Repo"
                   desc="Start migration"
-                  onClick={() => go("/uploads")}
+                  onClick={() => go("/new-migration")}
                 />
                 <QuickAction
                   icon={<BarChart3 />}
                   title="View Reports"
                   desc="Analytics"
-                  onClick={() => go("/reports")}
+                  onClick={() => go("/migrations")}
                 />
               </div>
             </section>
